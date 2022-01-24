@@ -1,0 +1,40 @@
+\chapter{Limits of Functions}
+
+\lecture{1}{2022-01-20}{Pointwise and Uniform Convergence}
+
+\begin{defn}{Pointwise Convergence}{pointwiseconvergence}
+  Given a sequence \((f_n)\) of functions with \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\), \(f_n\) \emph{converges pointwise on \(A\)} to \(f\colon A \to \mathbb{R}\) if, for each \(x \in A\), \[ \lim_{n\to\infty} f_n(x) = f(x).\]
+\end{defn}
+
+This notion of convergence for functions has undesirable properties. For example, even if all \(f_n\) are continuous, it may be the case that their limit function is not a continuous function. Let's define a stronger convergence condition for functions.
+
+\begin{defn}{Uniform Convergence}{uniformconvergence}
+  Given a sequence \((f_n)\) of functions with \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\), \(f_n\) \emph{converges uniformly on \(A\)} to \(f \colon A \to \mathbb{R}\) if, for all \(\epsilon > 0\), there exists an integer \(N\) such that \[ |f_n(x) - f(x) | < \epsilon \] for all \(x \in A\) and \(n \geq N\).
+\end{defn}
+
+Note that we can rewrite the definition of pointwise convergence as: for all \(x \in A\) and all \(\epsilon > 0\), there exists \(N\) such that \(|f_n(x) - f(x)| < \epsilon\) for all \(n \geq N\). The key difference between pointwise convergence and uniform convergence is that  \(N\) depends on both \(x\) and \(\epsilon\) in pointwise convergence, while  \(N\) only depends on \(\epsilon\) in uniform convergence.
+
+\begin{prop}{}{}
+  Given a sequence \((f_n)\) of functions with \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\) such that \(f_n\) converges uniformly on \(A\) to \(f\colon A \to \mathbb{R}\), then \(f_n\) converes poiwise on \(A\) to \(f\).
+\end{prop}
+\begin{dem}{}{}
+  Since \(f_n\) converges uniformly on \(A\) to \(f\), for all \(\epsilon > 0\), there exists an integer \(N(\epsilon)\) such that \[ |f_n(x) - f(x) | < \epsilon \] for all \(x \in A\) and \(n \geq N\).
+
+  Therefore, for all \(x \in A\) and \(\epsilon > 0\), the integer \(N(\epsilon)\) has the property that \[ | f_n(x) - f(x) | < \epsilon,\] i.e., for all \(x \in A\),  \(\lim_{n \to\infty} f_n(x) = f(x)\). Therefore, \(f_n\) converges pointwise on \(A\) to \(f\).
+\end{dem}
+
+\begin{thm}{}{}
+  Given a sequence \((f_n)\) of functions with \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\), \(f_n\) converfes uniformly on \(A\) to \(f\) if, and only if, \[
+    \adjustlimits\lim_{n\to\infty} \sup_{x\in A} |f_n(x) - f(x)| = 0.
+  \]
+\end{thm}
+\begin{dem}{}{}
+  Suppose \(f_n\) converges uniformly on \(A\) to \(f\).
+  Then, for all \(\epsilon > 0\), there exists an integer \(N\) such that \( |f_n(x) - f(x) | < \epsilon/2 \) for all \(x \in A\) and \(n \geq N\).
+  This implies that, for all \(\epsilon > 0\), there exists an integer \(N\) such that, for all \(n \geq N\), \( \sup_{x\in A} |f_n(x) - f(x)| < \epsilon.\)
+  Finally, using the definition of limit, we conclude that \( \lim_{n\to\infty} \sup_{x\in A} |f_n(x) - f(x)| = 0.  \) 
+
+  Now, suppose that \( \lim_{n\to\infty} \sup_{x\in A} |f_n(x) - f(x)| = 0.  \) 
+  This implies that, for all \(\epsilon > 0\), there exists an integer \(N\) such that, for all \(n \geq N\), \( \sup_{x\in A} |f_n(x) - f(x)| < \epsilon/2.\)
+  Then, for all \(\epsilon > 0\), there exists an integer \(N\) such that \( |f_n(x) - f(x) | < \epsilon \) for all \(x \in A\) and \(n \geq N\). Therefore, \(f_n\) converges uniformly on \(A\) to \(f\).
+\end{dem}

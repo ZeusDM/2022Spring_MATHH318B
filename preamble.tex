@@ -1,0 +1,160 @@
+\usepackage[english]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[symbol]{footmisc}
+\usepackage{lmodern}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+	linkcolor=NavyBlue,
+	citecolor=NavyBlue,
+	filecolor=Red,
+	urlcolor=NavyBlue,
+	menucolor=Red,
+	runcolor=Red}
+\usepackage{amsmath,amssymb,amsfonts,dsfont}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage[only, mapsfrom]{stmaryrd}
+\usepackage{enumitem}
+\setlist{noitemsep, label = \textbf{\roman*.}}
+\usepackage{todonotes}
+%\newcommand\showkeyslabelformat[1]{\hspace*{-1in}\raisebox{1.3em}{\normalfont\footnotesize\ttfamily#1}}
+%\usepackage[color]{showkeys}
+
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\tcbuselibrary{many, skins}
+
+\newtcbtheorem[number within=chapter]{thm}{Theorem}{
+	theorem style=plain apart,
+	sharp corners,
+	enhanced jigsaw,
+	breakable,
+	colback=NavyBlue!10,
+	colbacktitle=NavyBlue!70!black,
+	coltitle=White,
+	boxrule=0pt,
+	fonttitle=\sffamily\bfseries,
+	description font=\normalfont\sffamily,
+	parbox=false,
+}{thm}
+
+\newtcbtheorem[use counter from=thm]{lem}{Lemma}{
+	theorem style=plain apart,
+	sharp corners,
+	enhanced jigsaw,
+	breakable,
+	colback=NavyBlue!10,
+	colbacktitle=NavyBlue!70!black,
+	coltitle=White,
+	boxrule=0pt,
+	fonttitle=\sffamily\bfseries,
+	description font=\normalfont\sffamily,
+	parbox=false,
+}{lem}
+
+\newtcbtheorem[use counter from=thm]{cor}{Corolary}{
+	theorem style=plain apart,
+	sharp corners,
+	enhanced jigsaw,
+	breakable,
+	colback=NavyBlue!10,
+	colbacktitle=NavyBlue!70!black,
+	coltitle=White,
+	boxrule=0pt,
+	fonttitle=\sffamily\bfseries,
+	description font=\normalfont\sffamily,
+	parbox=false,
+}{cor}
+
+\newtcbtheorem[use counter from=thm]{defn}{Definition}{
+	theorem style=plain apart,
+	sharp corners,
+	enhanced jigsaw,
+	breakable,
+	colback=Aquamarine!10,
+	colbacktitle=Aquamarine!70!black,
+	coltitle=White,
+	boxrule=0pt,
+	fonttitle=\sffamily\bfseries,
+	description font=\normalfont\sffamily,
+	parbox=false,
+}{defn}
+
+\newtcbtheorem[use counter from=thm]{prop}{Proposition}{
+	theorem style=plain apart,
+	sharp corners,
+	enhanced jigsaw,
+	breakable,
+	colback=NavyBlue!10,
+	colbacktitle=NavyBlue!70!black,
+	coltitle=White,
+	boxrule=0pt,
+	fonttitle=\sffamily\bfseries,
+	description font=\normalfont\sffamily,
+	parbox=false,
+}{prop}
+
+\newtcbtheorem[no counter]{que}{Question}{
+	theorem style=plain,
+	terminator sign={.},
+	sharp corners,
+	enhanced jigsaw,
+	breakable,
+	colback=Green!10,
+	colbacktitle=Green!70!black,
+	coltitle=Black,
+	boxrule=0pt,
+	fonttitle=\sffamily\itshape,
+	description font=\normalfont\sffamily,
+	parbox=false,
+}{que}
+
+\newtcbtheorem[no counter]{exmp}{Example}{
+	theorem style=plain apart,
+	sharp corners,
+	enhanced jigsaw,
+	breakable,
+	colback=Orange!10,
+	colbacktitle=Orange!70!black,
+	coltitle=White,
+	boxrule=0pt,
+	fonttitle=\sffamily\bfseries,
+	description font=\normalfont\sffamily,
+	parbox=false,
+}{exmp}
+
+\newtcbtheorem[no counter]{dem}{Proof}{
+	theorem style=plain,
+	terminator sign={.},
+	sharp corners,
+	enhanced jigsaw,
+	breakable,
+	colframe=Black!20,
+	colback=White,
+	coltitle=Black,
+	boxrule=2pt,
+	fonttitle=\sffamily\itshape,
+	description font=\normalfont\sffamily,
+	parbox=false,
+}{dem}
+
+\AtEndEnvironment{dem}{\null\hfill\textcolor{Black!20}{$\blacksquare$}}
+
+\newcommand{\lecture}[3]{
+	%\newpage
+	%\section{#3 (#2)}
+	\todo[bordercolor = gray!30!white, backgroundcolor = gray!30!white, noline]{\scalebox{.65}{Lecture #1}}
+}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\newcommand{\correct}[2]{\textcolor{Red!90!black}{\st{#1}} \textcolor{ForestGreen}{#2}}
+\newcommand{\signexpl}[3]{\underset{\substack{\uparrow\\\mathrlap{\text{\hspace{#3}#2}}}}{#1}}

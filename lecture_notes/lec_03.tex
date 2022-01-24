@@ -1,0 +1,35 @@
+\lecture{3}{2022-01-24}{}
+
+\section{Interaction with Boundness}
+
+\begin{prop}{}{}
+  There exists a sequence of functions \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\), all of them bounded on \(A\), and \(f_n \to f\) pointwise on \(A\) for a unbounded function \(f\) on \(A\).
+\end{prop}
+
+\begin{dem}{}{}
+  Consider \(f_n \colon \mathbb{R} \to \mathbb{R}\) defined by \[
+    f_n(x) = 
+	\begin{cases}
+	  x & |x| < n \\
+	  0 & \text{otherwise,}
+	\end{cases}
+  \]
+  which converges pointwise to \(f(x) = x\) on \(\mathbb{R}\).
+\end{dem}
+
+\begin{prop}{}{}
+  If \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\) is bounded for each \(n\), and if \(f_n \to f\) uniformly on \(A\), then \(f\) is bounded on \(A\).
+\end{prop}
+
+\begin{dem}{}{}
+  Plug \(\epsilon \mapsto 1\) on the definition of uniformly convergence. Then, there exists \(N\) such that \[
+    |f_n(x) - f(x)| < 1
+  \] 
+  for all \(n \geq N\) and all \(x \in A\).
+
+  Since \(f_N\) is bounded, there exists \(M\) such that \(|f_N(x)| < M\) for all \(x \in A\).
+  Finally, by triangular inequality, we conclude that \[
+    |f(x)| < M + 1,
+  \] 
+  for all \(x \in A\); therefore, \(f\) is bounded.
+\end{dem}

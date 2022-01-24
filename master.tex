@@ -1,0 +1,39 @@
+\documentclass{scrbook}
+\KOMAoptions{
+	fontsize=11pt,
+	paper=letter,
+	paper=portrait,
+	parskip=half-,
+	headings=big,
+	chapterprefix=false,
+	toc=listof,
+	twoside=false,
+	DIV = 10,
+	}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{asymptote}
+\def\asydir{figures/asy}
+\input{preamble.tex}
+
+\title{Analysis II\\Lecture Notes}
+\author{Guilherme Zeus Dantas e Moura\\\href{mailto:gdantasemo@haverford.edu}{\texttt{gdantasemo@haverford.edu}}}
+\date{Haverford College --- Fall 2021\\Last updated: \today}
+
+\begin{document}
+	\maketitle
+
+		This is Haverford College's undergraduate MATH H318, instructed by Robert Manning.
+		All errors are my responsability.
+
+		Use these notes only as a guide. There is a non-trivial chance that some things here are wrong or incomplete (especially proofs).
+
+		\tableofcontents
+		\newpage
+
+	% start lectures
+	\input{lecture_notes/lec_01.tex}
+	\input{lecture_notes/lec_02.tex}
+	\input{lecture_notes/lec_03.tex}
+	% end lectures
+\end{document}

@@ -1,0 +1,19 @@
+\lecture{2}{2022-01-21}{Uniform Convergence}
+
+Uniform convergence of \(f_n\) to \(f\) says that, for all \(\epsilon > 0\), there exists \(N\) large enough so that the graph of \(f_n\), for all \(n \geq N\), is entirely in the ``\(\epsilon\)-tube'' of the graph of \(f\).
+
+\begin{figure}[htbp]
+  \centering
+  \asyinclude{figures/asy/e-tube.asy}
+  \caption{Graph of the ``\(\epsilon\)-tube.'' In this example, all \(f_n\), for \(n \geq 4\), are in the  \(\epsilon\)-tube.}
+\end{figure}
+
+\begin{exmp}{}{}
+  Let \(f_n(x) = \frac{1}{1+nx^2}\) and let \(f\) be its poitwise limit, i.e., \(f(x) = 0\). Then, \(f_n\) uniformly converges to \(f\) on \((\epsilon, 1)\), for all \(\epsilon > 0\); however, \(f_n\) does not converge uniformly to \(f\) on \((0, 1)\).
+\end{exmp}
+
+\begin{figure}[htbp]
+  \centering
+  \asyinclude{figures/asy/frac11+nx2.asy}
+  \caption{Graph of some functions \(f_n(x) = \frac{1}{1 + nx^2}\).}
+\end{figure}
