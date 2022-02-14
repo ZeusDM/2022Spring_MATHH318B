@@ -1,0 +1,81 @@
+\lecture{8}{2022-02-04}{}
+
+\section{Measure}
+
+We are going to cheat a little.
+
+\begin{defn}{Measure Zero}{}
+  A set \(A \subset \mathbb{R}\) \emph{has measure zero} if, for all \(\epsilon > 0\), there exists a finite or countable collection of open intervals \((a_n, b_n)\) such that \[
+    A \subset \bigcup_{n} (a_n, b_n) \qquad \text{and} \qquad \sum_{n} (b_n - a_n) \leq \epsilon.
+  \] 
+\end{defn}
+
+\begin{prop}{}{}
+  If \(A\) has measure zero, and \(B\) has measure zero, then \(A \cup B\) has measure zero.
+\end{prop}
+
+\begin{prop}{}{}
+  If \(\mathcal{C}\) is a countable collection of sets with measure zero, then their union also has measure zero.
+\end{prop}
+
+\begin{exmp}{}{}
+  The sets \(\{4, 8\}\), \(\mathbb{N}\), \(\mathbb{Q}\), and the cantor set \(C\) have measure zero.
+\end{exmp}
+
+\begin{prop}{}{}
+  If \(a < b\), then \([a, b]\) does not have measure zero.
+\end{prop}
+
+\begin{dem}{Sketch}{}
+  Suppose we could cover \([a, b]\) with an open cover with total length at most \(\frac{b-a}{4}\).
+  Since \([a, b]\) is compact, this cover has a finite sub-cover; which still has length at most \(\frac{b-a}{4}\).
+  Suppose that that subcover contains \((a_1, b_1)\), \(\dots\), \((a_n, b_n)\), with \(a_1 \leq a_2 \leq \cdots \leq a_n\).
+  \textcolor{red}{To be finished.}
+\end{dem}
+
+\begin{cor}{}{}
+  If \(a < b\), then \((a, b]\), \([a, b)\), \((a, b)\) do not have measure zero.
+\end{cor}
+
+\subsection{Step Functions}
+
+A step function is a function that is non-zero on a finite set of disjoint bounded intervals, constant on each of those intervals, and zero everywhere else.
+
+\begin{defn}{Characteristic Function}{}
+  Given \(S \subset \mathbb{R}\), the corresponding characteristic function is \[
+    \chi_S(x) =
+    \begin{cases}
+      1 & x \in S \\
+      0 & x \notin S
+    \end{cases}
+  \] 
+\end{defn}
+
+\begin{defn}{Step Function}{}
+  A step function is a function of the form \[
+    f(x) = c_1\chi_{I_1}(x) + c_2\chi_{I_2}(x) + \cdots + c_n\chi_{I_n}(x),
+  \] 
+  where \(c_j\) are real numbers and \(I_j\) is a collection of disjoint bounded intervals.
+  Equivalently, \(I_j\) can be a collection of (not necessarily disjoint) bounded intervals.
+\end{defn}
+
+\begin{defn}{Lebesgue integral of a step function}{}
+  Given a step function \[
+    f(x) = c_1\chi_{I_1}(x) + c_2\chi_{I_2}(x) + \cdots + c_n\chi_{I_n}(x),
+  \] we define its Lebesgue integral to be \[
+    \int_{-\infty}^\infty f(x) = c_1m(I_1) + c_2m(I_2) + \cdots + c_nm(I_n),
+  \] 
+  where \(m(I_i)\) is the absolute value of the difference of \(I_i\)'s endpoints.
+\end{defn}
+
+\begin{defn}{Lebesgue integral of some other functions}{}
+  Given a function \(f\colon \mathbb{R} \to \mathbb{R}\), if we can find a sequence \(\phi_n\) of step functions such that
+  \begin{enumerate}
+    \item \(\phi_1(x), \phi_2(x), \phi_3(x), \dots\) is monotone increasing for each \(x \in \mathbb{R}\), and
+    \item \(\phi_n \to f\) pointwise except possibly on a set of measure zero,
+  \end{enumerate}
+  then we define \[
+    \int_{-\infty}^\infty f(x)dx = \lim_{n\to\infty} \int_{-\infty}^\infty \phi_n(x)dx,
+  \] 
+  if that limit exists.
+\end{defn}

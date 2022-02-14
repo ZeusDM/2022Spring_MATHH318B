@@ -1,0 +1,31 @@
+\lecture{12}{2022-02-14}{}
+
+\begin{defn}{}{}
+  Let \(L^1(\mathbb{R})\) be the space of functions \(f\) such that there are \(g, h \in L^0(\mathbb{R})\) satisfying \(f = g - h\). In that case, we define \[
+    \int_{-\infty}^\infty f(x)\,dx =
+	\int_{-\infty}^\infty g(x)\,dx -
+    \int_{-\infty}^\infty h(x)\,dx.
+  \] 
+\end{defn}
+
+\begin{thm}{\(L^1(\mathbb{R})\) is a vector space}{}
+  \(L^1(\mathbb{R})\) is a vector space.
+\end{thm}
+
+\begin{thm}{Order Integral Theorem}{}
+  If \(f_1, f_2 \in L^1(\mathbb{R})\) and \(f_1(x) \geq f_2(x)\) for all \(x \in \mathbb{R}\), then \[
+    \int_{-\infty}^\infty f_1(x)\,dx \geq 
+    \int_{-\infty}^\infty f_2(x)\,dx.
+  \] 
+\end{thm}
+
+\begin{thm}{}{} 
+  If \(f \in L^1(\mathbb{R})\), then \(|f| \in L^1(\mathbb{R})\), and \[
+    \left| \int_{-\infty}^{\infty} f(x)\,dx \right| \leq
+    \int_{-\infty}^{\infty} \left|f(x)\right| \,dx.
+  \] 
+\end{thm}
+
+\begin{defn}{\(1\)-``norm''}{}
+  Given \(f \in L^1(\mathbb{R})\), let \(\|f\|_{1} = \int_{-\infty}^\infty |f(x)|\).
+\end{defn}

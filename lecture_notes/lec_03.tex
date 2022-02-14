@@ -2,7 +2,7 @@
 
 \section{Interaction with Boundness}
 
-\begin{prop}{}{}
+\begin{prop}{Pointwise convergence does not preserve boundness}{}
   There exists a sequence of functions \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\), all of them bounded on \(A\), and \(f_n \to f\) pointwise on \(A\) for a unbounded function \(f\) on \(A\).
 \end{prop}
 
@@ -17,7 +17,7 @@
   which converges pointwise to \(f(x) = x\) on \(\mathbb{R}\).
 \end{dem}
 
-\begin{prop}{}{}
+\begin{prop}{Uniform convergence preserves boundness}{}
   If \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\) is bounded for each \(n\), and if \(f_n \to f\) uniformly on \(A\), then \(f\) is bounded on \(A\).
 \end{prop}
 
@@ -33,3 +33,48 @@
   \] 
   for all \(x \in A\); therefore, \(f\) is bounded.
 \end{dem}
+
+\section{Interaction with Continuity}
+
+\begin{prop}{Uniform convergence preserves continuity}{}
+  If \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\) is continuous for each \(n\), and if \(f_n \to f\) uniformly on \(A\), then \(f\) is continuous on \(A\).
+\end{prop}
+
+\begin{dem}{}{}
+  Let \(c \in A\) be arbitrary.
+  Let \(\epsilon > 0\) be arbitrary.
+
+  Since \(f_n \to f\), there exists \(N\) such that \[
+    |f_n(x) - f(x)| < \epsilon/3
+  \] for all \(n \geq N\) and \(x \in A\).
+
+  Since \(f_N\) is continous at \(c\), there exists \(\delta > 0\) such that \[
+    |f_N(x) - f_N(c)| < \epsilon/3
+  \]  for all \(x \in A\) satisfying \(|x - c| < \delta\).
+
+  Therefore, by triangle inequality, 
+  \begin{align*}
+    |f(c) - f(x)| &= |f(c) - f_n(c) + f_n(c) - f_n(x) + f_n(x) - f(x)| \\
+                  &\leq |f(c) - f_n(c)| + |f_n(c) - f_n(x)| + |f_n(x) - f(x)| \\
+                  &< \epsilon
+  \end{align*}
+  for all \(x \in A\) satisfying \(|x - c| < \delta\).
+  Since \(\epsilon\) was arbitrary, this implies \(f\) is continuous at \(c\).
+  Since \(c\) was arbitrary, this implies \(f\) is continuous on \(A\).
+\end{dem}
+
+\section{Interaction with Differentiability}
+
+\begin{prop}{Uniform convergence does not preserve differentiability}{}
+  There exists a sequence of functions \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\), all of them differentiable on \(A\), and \(f_n \to f\) uniformly on \(A\) for a non-differentiable function \(f\) on \(A\).
+\end{prop}
+
+\begin{thm}{}{}
+  If
+  \begin{enumerate}
+    \item \(f_n\) is differentiable on \([a, b]\), for all integers \(n\),
+    \item \(f_n'\) converges uniformly on \([a, b]\) to \(g\), and
+    \item \(f_n\) converges pointwise on \([a, b]\) to \(f\),
+  \end{enumerate}
+  then \(f\) is differentiable on \([a, b]\), and  \(f'=g\).
+\end{thm}

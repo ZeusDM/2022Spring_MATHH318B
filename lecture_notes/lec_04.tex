@@ -1,0 +1,16 @@
+\lecture{4}{2022-01-26}{}
+
+\subsection*{Aside: Series solutions for differential equations}
+
+\begin{que}{}{}
+  Derive functions \(y(x)\) that obey  \[
+    x\frac{d^2y}{dx^2} + \frac{dy}{dx} + xy = 0.
+  \] 
+\end{que}
+
+\begin{dem}{Sketch}{}
+  Plug \(y(x) = \sum_{n=0}^{\infty} a_nx^n\) in the equation above yields \[
+    a_1 + \sum_{n=1}^\infty \left((n+1)^2a_{n+1} + a_{n-1}\right)x^n = 0,
+  \]
+  thus we can infer \(a_{2k+1} = 0\) and \((2k)^2a_{2k} + a_{2k-2} = 0\) for all \(k \in \{1, 2, \dots\}\).
+\end{dem}

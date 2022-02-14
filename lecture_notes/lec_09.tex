@@ -1,0 +1,79 @@
+\lecture{9}{2022-02-07}{}
+
+\begin{exmp}{}{}
+  Consider \(f \colon \mathbb{R} \to \mathbb{R}\) defined by \[
+    f(x) =
+	\begin{cases}
+	  1 & \text{if }x \in \mathbb{Q}\text{ and }x \in [0, 1]\\
+	  0 & \text{otherwise.}
+	\end{cases}
+  \] 
+  Note that \(\phi_n(x) := 0\) converges pointwise to \(f\) except on \(\mathbb{Q}\cap[0, 1]\), which has measure zero. Therefore, \[
+    \int_{-\infty}^\infty f(x)dx = \lim_{n\to\infty} \int_{-\infty}^\infty \phi_n(x)dx = 0.
+  \] 
+\end{exmp}
+
+\begin{exmp}{}{}
+  Consider \(f\colon \mathbb{R} \to \mathbb{R}\) defined by  \[
+    f(x) = 1.
+  \] 
+  Define \(\phi_n\colon \mathbb{R} \to \mathbb{R}\) by \[\phi_n(x) :=
+  \begin{cases}
+	1 & \text{if }x \in [-n, n]\\
+	0 & \text{otherwise.}
+  \end{cases}\]
+  Since \(\phi_n\) converges pointwise to \(f\),
+  \[
+    \int_{-\infty}^\infty f(x)dx = \lim_{n\to\infty} \int_{-\infty}^\infty \phi_n(x)dx = \lim_{n \to \infty} 2n = +\infty.
+  \] 
+\end{exmp}
+
+\begin{exmp}{}{}
+  Consider \(f \colon \mathbb{R} \to \mathbb{R}\) defined by \[
+    f(x) =
+	\begin{cases}
+	  1/2^k & \text{ if } k - 1 < x \leq k \text{ for }k \in \mathbb{N} \\
+	  0 & \text{otherwise.}
+	\end{cases}
+  \] 
+  Define \(\phi_n\colon \mathbb{R} \to \mathbb{R}\) by \[\phi_n(x) :=
+	\begin{cases}
+	  1/2^k & \text{ if } k - 1 < x \leq k \text{ for }k \in \{1, 2, \dots, n\} \\
+	  0 & \text{otherwise.}
+	\end{cases}
+  \]
+  Since \(\phi_n\) converges pointwise to \(f\), \begin{align*}
+	\int_{-\infty}^\infty f(x)dx &= \lim_{n\to\infty} \int_{-\infty}^\infty \phi_n(x)dx \\
+								 &= \lim_{n\to\infty} \sum_{k=1}^n \frac{1}{2^n} = 1.
+  \end{align*}
+\end{exmp}
+
+\begin{exmp}{}{}
+  Consider \(f \colon \mathbb{R} \to \mathbb{R}\) defined by \[
+    f(x) =
+	\begin{cases}
+	  1/\sqrt{x} & \text{for }0 < x \leq 1 \\
+	  0 & \text{anywhere.}
+	\end{cases}
+  \] 
+  Define \(\phi_n\colon \mathbb{R} \to \mathbb{R}\) by \[\phi_n(x) :=
+	f\left(\frac{k^2}{4^n}\right) = \frac{2^n}{k},
+  \]
+  if \(\frac{(k-1)^2}{4^n} < x \leq \frac{k^2}{4^n}\).
+  Since \(\phi_n\) converges pointwise to \(f\), \begin{align*}
+    \int_{-\infty}^\infty f(x) dx &= \lim_{n\to\infty} \int_{-\infty}^\infty \phi_n(x) dx \\
+                                  &= \lim_{n\to\infty} \sum_{j=1}^{2^n} \frac{2^n}{j}\frac{j^2 - (j-1)^2}{4^n} \\
+                                  &= \lim_{n\to\infty} \frac{1}{2^n} \sum_{j=1}^{2^n} \frac{j^2 - (j-1)^2}{j} \\
+  \end{align*}
+
+  \textcolor{red}{To be continued.}
+\end{exmp}
+
+\begin{defn}{}{}
+  Let \(L^0(\mathbb{R})\) be the set of functions \(f\colon \mathbb{R} \to \mathbb{R}\) such that there exists a sequence \(\phi_n\) of step functions satisfying
+  \begin{enumerate}
+    \item \(\phi_n(x) \leq \phi_{n+1}(x)\) for all \(n \in \mathbb{N}\) and \(x \in \mathbb{R}\);
+    \item \(\phi_n \to f\) pointwise, expect on a set of measure zero;
+    \item \(\lim_{n\to\infty} \int_{-\infty}^\infty \phi_n(x)\) is a real number.
+  \end{enumerate}
+\end{defn}

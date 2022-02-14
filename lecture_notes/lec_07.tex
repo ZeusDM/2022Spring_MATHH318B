@@ -1,0 +1,20 @@
+\lecture{7}{2022-02-02}{}
+
+Last semester, we defined \(\epsilon\)-neighborhoods, open sets, sequence convergence, closed sets, etc. on normed vector spaces. Therefore, we have those definitions for \(C([a, b])\) and \(B([a, b])\) 
+
+\begin{exmp}{}{}
+  The set \(\{f \in C[(0, 1)] : f(1/3) + f(2/3) < 1\}\) is open, but not closed.
+
+  The set \(\{f \in C[(0, 1)] : f(0) = 0\}\) is closed, but not open.
+
+  The set \(\{f \in C[(0, 1)] : f \text{ is a constant function}\}\) is closed, but not open.
+
+  The set \(\{f \in C[(0, 1)] : f \text{ is a polynomial}\}\) is neither open nor closed.
+\end{exmp}
+
+\begin{prop}{}{}
+  Convergence with respect to the infinity norm is equal to uniform convergence.
+\end{prop}
+\begin{dem}{}{}
+  Note that \(f_n \to f\) with respect to \(||\bullet||_\infty\) is equivalent to \(||f_n - f||_\infty \to 0\). In turn, this is equivalent to \(\lim_{n\to\infty}\sup_{x \in [a, b]} |f_n(x) - f(x)|\). Finally, this is equivalent to  \(f_n \to f\) uniformly.
+\end{dem}

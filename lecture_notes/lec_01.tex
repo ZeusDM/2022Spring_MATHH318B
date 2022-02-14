@@ -1,6 +1,6 @@
 \chapter{Limits of Functions}
 
-\lecture{1}{2022-01-20}{Pointwise and Uniform Convergence}
+\lecture{1}{2022-01-19}{Pointwise and Uniform Convergence}
 
 \begin{defn}{Pointwise Convergence}{pointwiseconvergence}
   Given a sequence \((f_n)\) of functions with \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\), \(f_n\) \emph{converges pointwise on \(A\)} to \(f\colon A \to \mathbb{R}\) if, for each \(x \in A\), \[ \lim_{n\to\infty} f_n(x) = f(x).\]
@@ -14,8 +14,8 @@ This notion of convergence for functions has undesirable properties. For example
 
 Note that we can rewrite the definition of pointwise convergence as: for all \(x \in A\) and all \(\epsilon > 0\), there exists \(N\) such that \(|f_n(x) - f(x)| < \epsilon\) for all \(n \geq N\). The key difference between pointwise convergence and uniform convergence is that  \(N\) depends on both \(x\) and \(\epsilon\) in pointwise convergence, while  \(N\) only depends on \(\epsilon\) in uniform convergence.
 
-\begin{prop}{}{}
-  Given a sequence \((f_n)\) of functions with \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\) such that \(f_n\) converges uniformly on \(A\) to \(f\colon A \to \mathbb{R}\), then \(f_n\) converes poiwise on \(A\) to \(f\).
+\begin{prop}{Uniform convergence implies pointwise convergence}{}
+  Given a sequence \((f_n)\) of functions with \(f_n \colon A \subset \mathbb{R} \to \mathbb{R}\) such that \(f_n\) converges uniformly on \(A\) to \(f\colon A \to \mathbb{R}\), then \(f_n\) converes pointwise on \(A\) to \(f\).
 \end{prop}
 \begin{dem}{}{}
   Since \(f_n\) converges uniformly on \(A\) to \(f\), for all \(\epsilon > 0\), there exists an integer \(N(\epsilon)\) such that \[ |f_n(x) - f(x) | < \epsilon \] for all \(x \in A\) and \(n \geq N\).
