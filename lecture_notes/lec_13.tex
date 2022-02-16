@@ -1,0 +1,53 @@
+\lecture{13}{2022-02-16}{}
+
+The \(1\)-``norm'' is not actally an norm. Let's ``fix'' \(L^1(\mathbb{R})\) so that \(1\)-``norm'' is actually
+
+\begin{defn}{}{}
+  Let \(L^1_{nvs}(\mathbb{R})\) be the equivalent classes of functions, in which \(f\) and \(g\) are equivalent if, and only if, \(f\) and \(g\) agree except on a set of measure zero.
+\end{defn}
+
+Notationally, nobody calls this \(L^1_{nvs}(\mathbb{R})\); they just call it \(L^1(\mathbb{R})\).
+And most of the time, they describe an object in \(L^1(\mathbb{R})\) as if it were a function, even though in fact is a “collection of functions that all equal each other except on a set of measure zero”.
+
+\begin{defn}{}{}
+  If \(f \colon A \supset [a, b] \to \mathbb{R}\) and the restriction of \(f\) to \([a, b]\) is in \(L^1([a, b])\), then
+  \[
+    \int_a^b f(x)\,dx := \int_{-\infty}^\infty g(x)\,dx,
+  \] 
+  where \(g \colon \mathbb{R} \to \mathbb{R}\) is defined by \[
+    g(x)
+    \begin{cases}
+      f(x) & x \in [a, b] \\
+      0 & \text{otherwise.}
+    \end{cases}
+  \] 
+\end{defn}
+
+Since we are lazy, we will say that \(f \in L^1([a, b])\).
+
+\begin{prop}{}{}
+  If \(f \in L^1([a, b])\) and \(f \in L^1([b, c])\), then \(f \in L^1([a, c]\) and \[
+    \int_a^c f(x)\,dx = \int_a^b f(x)\,dx + \int_b^c f(x)\,dx.
+  \] 
+\end{prop}
+
+\begin{thm}{Lebegue's Fundamental Theorem of Calculus}{}
+  If \(f \in L^1([a, b])\) define \(F(x) = \int_a^b f(t)\,dt\) for any \(x \in [a, b]\).
+  If \(f\) is continuous at \(c \in (a, b)\), then \(F'(c)\) exists and equals \(f(c)\).
+\end{thm}
+
+\begin{dem}{}{}
+  Let \(\epsilon > 0\) be arbitrary.
+
+  Since \(f\) is continous at \(c\), there exists \(\delta > 0\) so that for every \(x\) \(\delta\)-close to \(c\) we have \(|f(x) - f(c)| < \delta\).
+
+  Let \(h\) be arbitrary such that \(0 < |h| < \delta\).  Without loss of generality, suppose \(0 < h < \delta\).
+  \begin{align*}
+    \left| \frac{F(c+h) - F(c)}{h} - f(c) \right|
+      &= \left| \frac{\int_a^{c+h}f(t)\,dt  - \int_a^cf(t)\,dt}{h} - f(c) \right| \\
+      &= \left| \frac{\int_c^{c+h}f(t)\,dt|}{h} - \frac{\int_c^{c+h}f(c)\,dt}{h} \right| \\
+      &= \left| \frac{\int_c^{c+h} (f(t) - f(c))\,dt|}{h} \right| < \epsilon.
+  \end{align*}
+
+  Therefore, the result follows.
+\end{dem}
