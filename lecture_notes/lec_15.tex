@@ -1,0 +1,24 @@
+\lecture{15}{2022-02-21}{}
+
+\begin{thm}{\(L^1([a, b])\) is complete}{}
+	If \(f_n \in L^1([a, b])\) is a Cauchy sequence (with respect to \(\|\bullet\|_1\)), then there exists \(f \in L^1([a, b])\) such that \(f_n \to f\).
+\end{thm}
+
+\begin{defn}{}{}
+	For \(p > 1\), we say that \(f \in L^p(\mathbb{R})\) if \(f\) is a measurable function and \(\int_{-\infty}^\infty |f(x)|^p\,dx\) is a finite number.
+\end{defn}
+
+\subsection{Aside: Measure}
+
+\begin{exmp}{Non-measurable set}{}	
+	Endow \([0, 1)\) with an equivalence relation defined by \(a \sim b \iff a - b \in \mathbb{Q}\). 
+	Using the Axiom of Choice, construct a set \(V\) by picking one representant from each set.
+
+	If the measure of \(V\) is \(0\), then we can conclude that every \(V + q \pmod{1}\) also have measure zero, for rationals \(q \in [0, 1)\), but then their union, which is \([0, 1)\), also has measure zero.
+
+	If the measure of \(V\) is \(\epsilon > 0\), then we can conclude that every \(V + q \pmod{1}\) also have measure \(\epsilon\), for rationals \(q \in [0, 1)\), but the union of more than \(1/\epsilon\) has measure greater than \(1\), but is contained in \([0, 1)\).
+\end{exmp}
+
+\begin{exmp}{Non-measurable function}{}
+	Consider \(\chi_{V}\).
+\end{exmp}
