@@ -1,0 +1,57 @@
+\lecture{16}{2022-02-23}{}
+
+\begin{defn}{\(p\)-norm}{}
+	Given \(f \in L^p(\mathbb{R})\), define \[
+		\|f\|_p = \left( \int_{-\infty}^\infty |f(x)|^p\,dx \right)^{1/p}.
+	\] 
+\end{defn}
+
+\section{Convex Functions}
+
+\begin{defn}{Convex Function}{}
+	Given an interval \(A \subset \mathbb{R}\), a function \(f \colon A \to \mathbb{R}\) is \emph{convex} if, and only if, \[
+		f(\lambda x + (1 - \lambda) y) \leq \lambda f(x) + (1-\lambda) f(y),
+	\] 
+	for all \(x, y \in A\) and \(\lambda \in [0, 1]\).
+\end{defn}
+
+\begin{exmp}{}{}
+	The functions \(f\colon \mathbb{R} \to \mathbb{R}\) and \(g \colon [0, +\infty) \to \mathbb{R}\) defined by \(f(x) = |x|\) and \(g(x) = x^p\), for \(p > 1\), are convex functions.
+\end{exmp}
+
+\begin{thm}{}{}
+	Given an interval \(A\), and a convex function \(f \colon A \to \mathbb{R}\), if \(f(A)\) is an interval and \(g \colon f(A) \to \mathbb{R}\) is a convex function, then \(g \circ f\) is convex on \(A\).
+\end{thm}
+
+\begin{prop}{}{}
+	The \(p\)-norm indeed satisfies the triangle inequality. In other words, for all \(f, g \in L^p(\mathbb{R})\), \[
+		\left( \int_{-\infty}^\infty |f(x) + g(x)|^p\,dx \right)^{1/p} \leq
+		\left( \int_{-\infty}^\infty |f(x)|^p\,dx \right)^{1/p} +
+		\left( \int_{-\infty}^\infty |g(x)|^p\,dx \right)^{1/p}.
+	\] 
+\end{prop}
+
+\section{\texorpdfstring{$L^2(\mathbb{R})$}{L\texttwosuperior(R)} is special}
+
+\begin{thm}{}{}
+	If \(f, g \in L^2(\mathbb{R})\), then \(fg \in L^1(\mathbb{R})\), with \[
+		\int_{-\infty}^\infty |f(x)g(x)|\,dx
+		\leq \|f\|_2 \|g\|_2.
+	\] 
+\end{thm}
+
+\begin{defn}{Inner product in \(L^2(\mathbb{R})\)}{}
+	Given \(f, g \in L^2(\mathbb{R})\), we define their inner product by \[
+		\langle f, g \rangle = \int_{-\infty}^\infty f(x)g(x)\,dx.
+	\] 
+\end{defn}
+
+\begin{prop}{}{}
+	For all \(f, g, h \in L^2(\mathbb{R})\) and \(c \in \mathbb{R}\), 
+	\begin{enumerate}
+		\item \(\langle f, g \rangle = \langle g, f \rangle\).
+		\item \(\langle f, f \rangle \geq 0\), and the equality holds if, and only if, \(f = 0\).
+		\item \(\langle f + g, h \rangle = \langle f, h \rangle + \langle g, h \rangle\).
+		\item \(\langle cf, g \rangle = c\langle f, g \rangle\).
+	\end{enumerate}
+\end{prop}
