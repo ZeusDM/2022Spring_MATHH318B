@@ -282,5 +282,6 @@ info.yaml
 assignments
 books
 files
+project
 figures/asy/*.pdf
 figures/asy/master*
